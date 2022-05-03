@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdkVersion 31
 
     defaultConfig {
-        applicationId "com.research.boofcv_zcl"
-        minSdk 26
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        applicationId "org.boofcv.android"
+        // min SDK version is determined by when Camera2 API becomes functional
+        minSdkVersion 22
+        //noinspection OldTargetApi
+        targetSdkVersion 30
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
