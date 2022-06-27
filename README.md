@@ -4,8 +4,7 @@
 - [BoofCV](https://boofcv.org/index.php?title=Main_Page)
 - [BoofCV Android](http://peterabeles.com/blog/?p=204)
 - [BoofCV Fiducial Marker 284](https://boofcv.org/images/5/54/Fiducial_squre_binary.png)
-- [BoofCV Calibration Board](https://boofcv.org/images/2/23/Calibration_letter_chessboard_7x5.png) 
-  - Change the calibration board size from the default 9x6 to 7x5 if you use this one.
+- [BoofCV 9x6 Calibration Chessboard]([https://boofcv.org/images/2/23/Calibration_letter_chessboard_7x5.png](http://boofcv.org/notwiki/calibration/A4_chessboard.pdf)) 
 
 ### Issues / Problems to Solve
 - Need to be able to access detected cubes in FiducialSquareActivity in order to combine with touch
