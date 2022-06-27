@@ -26,6 +26,7 @@ import android.view.SurfaceView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -152,6 +153,7 @@ public abstract class DemoCamera2Activity extends VisualizeCamera2Activity {
 
     protected void setControls(@Nullable LinearLayout controls ) {
         setContentView(R.layout.standard_camera2);
+//        RelativeLayout parent = findViewById(R.id.root_layout);
         LinearLayout parent = findViewById(R.id.root_layout);
         if( controls != null)
             parent.addView(controls);

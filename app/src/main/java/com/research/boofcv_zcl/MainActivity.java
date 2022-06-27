@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.research.boofcv_zcl.boofcv.CameraSpecs;
 import com.research.boofcv_zcl.boofcv.DemoApplication;
+import com.research.boofcv_zcl.boofcv.recognition.FiducialSquareBinaryActivity;
 import com.research.boofcv_zcl.calibration.CalibrationActivity;
 import com.research.boofcv_zcl.calibration.UndistortDisplayActivity;
 import com.research.boofcv_zcl.util.PermissionSupport;
@@ -84,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-
         // UI element initialization
         btn_calibrate = findViewById(R.id.btn_calibrate);
         btn_camera = findViewById(R.id.btn_camera);
@@ -98,8 +98,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // camera button event listener
+        btn_camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FiducialSquareBinaryActivity.class));
 
-
+            }
+        });
 
         // request for permissions
         permissionSupport = new PermissionSupport(this, this);
@@ -111,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Requesting All Permissions", Toast.LENGTH_SHORT).show();
         }
 
+        // check if camera is calibrated
         if( app.preference.calibration.isEmpty() ) {
 //            Toast.makeText(MainActivity.this, "Please Calibrate Camera First", Toast.LENGTH_SHORT).show();
             btn_calibrate.setEnabled(true);

@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:hardwareAccelerated="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
 
         <activity
             android:name=".MainActivity"
@@ -36,6 +36,13 @@
             android:name=".calibration.CalibrationActivity"
             android:configChanges="keyboardHidden|orientation" />
         <!--            android:screenOrientation="landscape"-->
+
+        <activity
+            android:name=".boofcv.recognition.FiducialSquareBinaryActivity"
+            android:configChanges="keyboardHidden|orientation" />
+
+        <activity android:name=".boofcv.recognition.FiducialSquareBinaryHelpActivity" />
+
 
         <activity android:name=".calibration.CalibrationComputeActivity" />
 
