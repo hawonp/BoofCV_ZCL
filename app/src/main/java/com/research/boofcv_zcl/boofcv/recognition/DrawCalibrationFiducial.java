@@ -86,7 +86,6 @@ public class DrawCalibrationFiducial extends SurfaceView {
                 renderECoCheck(canvas, config, squareWidth);
             } break;
 
-            // TODO update
             case SQUARE_GRID: {
                 // how wide a black square is
                 ConfigGridDimen config = cc.squareGrid;
@@ -104,7 +103,6 @@ public class DrawCalibrationFiducial extends SurfaceView {
                 renderSquareGrid(canvas, config.numCols, config.numRows, squareWidth, (int)(squareWidth*ratio+0.5),0, 0);
             } break;
 
-            // TODO update
             case CIRCLE_HEXAGONAL: {
                 // spacing between circle centers
                 ConfigGridDimen config = cc.hexagonal;

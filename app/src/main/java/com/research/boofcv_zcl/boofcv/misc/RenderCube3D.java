@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 
 import com.research.boofcv_zcl.boofcv.recognition.FiducialSquareActivity;
 import com.research.boofcv_zcl.boofcv.recognition.FiducialSquareBinaryActivity;
+import com.research.boofcv_zcl.util.Data;
+import com.research.boofcv_zcl.util.MySql;
 
 import boofcv.alg.geo.PerspectiveOps;
 import boofcv.struct.calib.CameraPinholeBrown;
@@ -123,13 +125,22 @@ public class RenderCube3D {
 
         int textLength = bounds.width();
         int textHeight = bounds.height();
+
+        // TODO TEMP Solution of changing the label of the rendered cube
         canvas.save();
         canvas.rotate(270f, centerPixel.x, centerPixel.y);
-        String temp = "id: " + label + "\n" + "fill %: ";
+        MySql mySql = new MySql();
+
+        Data data = mySql.getData(label);
+        String temp = label;
+        if (data != null){
+            temp = "id: " + label + "\n" + "fill %: " + data.getResidual_amount();
+        }
         canvas.drawText(temp, centerPixel.x-textLength/2,centerPixel.y+textHeight/2, paintTextBorder);
         canvas.drawText(temp, centerPixel.x-textLength/2,centerPixel.y+textHeight/2, paintTextVideo);
 //        canvas.drawText(label, centerPixel.x-textLength/2,centerPixel.y+textHeight/2, paintTextBorder);
 //        canvas.drawText(label, centerPixel.x-textLength/2,centerPixel.y+textHeight/2, paintTextVideo);
+
         canvas.restore();
 
         this.point = centerPixel.toString();

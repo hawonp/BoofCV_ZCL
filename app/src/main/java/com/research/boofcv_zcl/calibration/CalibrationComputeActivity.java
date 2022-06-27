@@ -212,8 +212,6 @@ public class CalibrationComputeActivity extends Activity {
             for( CalibrationObservation c : images ) {
                 calibrationAlg.addImage(c);
             }
-            // TODO uncomment in BoofCV 0.30
-//			calibrationAlg.getZhang99().setListener(this);
             intrinsic = calibrationAlg.process();
 
             try {

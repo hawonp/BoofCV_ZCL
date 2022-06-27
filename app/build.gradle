@@ -47,4 +47,8 @@ dependencies {
     ['boofcv-android', 'boofcv-core'].each {
         String a -> api group: 'org.boofcv', name: a, version: '0.40'
     }
+
+    //jdbc
+    implementation 'mysql:mysql-connector-java:5.1.49'
+
 }

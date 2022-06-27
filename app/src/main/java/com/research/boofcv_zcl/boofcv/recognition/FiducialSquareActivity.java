@@ -192,11 +192,13 @@ public abstract class FiducialSquareActivity extends DemoBitmapCamera2Activity
         super.onResume();
     }
 
+    //TODO onTouch method
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if (MotionEvent.ACTION_DOWN == event.getActionMasked()) {
 //            showThreshold = !showThreshold;
 
+            // Dialog for showing data
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
 //            LayoutInflater inflater = this.getLayoutInflater();
 //
@@ -208,7 +210,6 @@ public abstract class FiducialSquareActivity extends DemoBitmapCamera2Activity
 //                }
 //            });
             builder.setTitle("Dialog");
-//            builder.setMessage()
             builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -216,17 +217,15 @@ public abstract class FiducialSquareActivity extends DemoBitmapCamera2Activity
                 }
             });
 
-//            for(RenderCube3D cube : cubes){
-//
-//                Toast.makeText(this, cube.point + " " + cube.width, Toast.LENGTH_SHORT).show();
-//            }
-
-
-// 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
             AlertDialog dialog = builder.create();
 
 //            dialog.show();
 
+            //TODO cannot access detected cubes here for some reason
+//            for(RenderCube3D cube : cubes){
+//
+//                Toast.makeText(this, cube.point + " " + cube.width, Toast.LENGTH_SHORT).show();
+//            }
             return true;
         }
         return false;
@@ -304,6 +303,7 @@ public abstract class FiducialSquareActivity extends DemoBitmapCamera2Activity
 
         }
 
+        // TODO Figure out a way to add touch detection here OR you can save the widths and ids and do touch detection in the OnTouch method above
         @Override
         public void onDraw(Canvas canvas, Matrix imageToView) {
             canvas.drawBitmap(bitmap, imageToView, null);
